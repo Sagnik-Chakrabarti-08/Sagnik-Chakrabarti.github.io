@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sagnik Chakrabarti · Biomedical Engineering & Medical AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef3f4;--surface:#ffffff;--ink:#0e2a33;--muted:#4d6670;--line:#c9d6da;--accent:#b3175f;--accent-ink:#ffffff;--teal:#0f6b73;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1a20;--surface:#12262e;--ink:#e6f0f2;--muted:#9bb3ba;--line:#26414a;--accent:#ff6fa8;--accent-ink:#0b1a20;--teal:#5fc7cf}}
+:root[data-theme="dark"]{--bg:#0b1a20;--surface:#12262e;--ink:#e6f0f2;--muted:#9bb3ba;--line:#26414a;--accent:#ff6fa8;--accent-ink:#0b1a20;--teal:#5fc7cf}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.65 "Source Serif 4",Georgia,serif}
+h1,h2,h3,.sans{font-family:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+nav{display:flex;gap:20px;flex-wrap:wrap;padding:20px 0;font:500 15px "Bricolage Grotesque",sans-serif}
+nav a{color:var(--ink);text-decoration:none}nav a:hover{color:var(--accent)}
+.hero{padding:48px 0 72px;max-width:760px}
+h1{font-size:clamp(44px,7vw,84px);line-height:.98;margin:0 0 20px;font-weight:800;letter-spacing:-.03em}
+.lede{font-size:21px;color:var(--muted);max-width:34em;margin:0 0 28px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{font:700 16px "Bricolage Grotesque",sans-serif;padding:12px 22px;border-radius:999px;text-decoration:none;border:2px solid var(--accent)}
+.btn.p{background:var(--accent);color:var(--accent-ink)}.btn.s{color:var(--accent)}
+.eye{background:var(--surface);border:1px solid var(--line);border-radius:28px;padding:20px}
+.eye svg{width:100%;height:auto;display:block;border-radius:16px}
+.eye label{display:flex;justify-content:space-between;font:500 14px "Bricolage Grotesque",sans-serif;color:var(--muted);margin-top:12px}
+.eye input{width:100%;accent-color:var(--accent);margin-top:6px}
+.eye p{font-size:14px;color:var(--muted);margin:10px 0 0;line-height:1.5}
+section{padding:64px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(30px,4vw,44px);margin:0 0 28px;letter-spacing:-.02em;line-height:1.1}
+h3{font-size:22px;margin:0 0 6px;line-height:1.2}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:28px}
+.card.big{border-left:6px solid var(--accent)}
+.meta{font:500 14px "Bricolage Grotesque",sans-serif;color:var(--teal);margin:0 0 10px}
+.card p{margin:0 0 12px}.card p:last-child{margin:0}
+.stats{display:flex;gap:28px;flex-wrap:wrap;margin:14px 0 0;font-family:"Bricolage Grotesque",sans-serif}
+.stats b{display:block;font-size:30px;color:var(--accent);line-height:1}.stats span{font-size:13px;color:var(--muted)}
+.tl{list-style:none;margin:0;padding:0 0 0 24px;border-left:3px solid var(--teal)}
+.tl li{margin:0 0 28px;position:relative}
+.tl li:before{content:"";position:absolute;left:-33px;top:9px;width:13px;height:13px;border-radius:50%;background:var(--bg);border:3px solid var(--teal)}
+.pubs{padding-left:20px}.pubs li{margin-bottom:14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.chips li{font:500 15px "Bricolage Grotesque",sans-serif;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:5px 12px}
+.skills dt{font:700 16px "Bricolage Grotesque",sans-serif;margin:22px 0 8px;color:var(--teal)}.skills dd{margin:0}
+.road{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:24px}
+.road ul{list-style:none;margin:0;padding:0}
+.road li{margin:0 0 10px}
+.road label{display:flex;gap:10px;cursor:pointer;font-size:17px;line-height:1.45}
+.road input{accent-color:var(--accent);width:20px;height:20px;flex:none;margin-top:3px}
+.road input:checked+span{text-decoration:line-through;color:var(--muted)}
+.prog{font:500 15px "Bricolage Grotesque",sans-serif;color:var(--muted);margin:-10px 0 24px}
+footer{padding:48px 0 64px;border-top:1px solid var(--line);font-size:16px;color:var(--muted)}
+footer a{font-weight:600}
+@media (max-width:760px){.hero,.two{grid-template-columns:1fr}.hero{padding-top:20px}body{font-size:17px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+.stack{display:grid;gap:24px}
+.proj{display:grid;grid-template-columns:1fr 300px;gap:32px;align-items:center}
+.proj.flip{grid-template-columns:300px 1fr}.proj.flip>div:first-child{order:2}
+.art svg{width:100%;height:auto;display:block;border-radius:14px}
+.proj .eye{border:0;padding:0;background:none;margin:0}
+.mini{display:grid;grid-template-columns:130px 1fr;gap:18px;align-items:start}
+.mini h3{font-size:19px}.mini p{font-size:16px}
+.mini .art svg{border-radius:10px}
+@media (max-width:760px){.proj,.proj.flip{grid-template-columns:1fr}.proj.flip>div:first-child{order:0}.mini{grid-template-columns:96px 1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav aria-label="Main"><a href="#about">About</a><a href="#research">Research</a><a href="#writing">Publications</a><a href="#projects">Projects</a><a href="#path">Experience</a><a href="#skills">Skills</a><a href="#beyond">Beyond</a><a href="#roadmap">Learning roadmap</a><a href="#contact">Contact</a></nav>
+
+<header class="hero"><div>
+<h1>Sagnik Chakrabarti</h1>
+<p class="lede">I'm a graduate student pursuing an M.S. in Biomedical Engineering at Columbia University, with a B.Tech in Computer Science Engineering from SRM Institute of Science and Technology and a year in the Global Study Program at UC Davis.</p>
+<p class="lede">I develop accessible biomedical devices and AI-driven diagnostic tools that meet real clinical needs, particularly in low-resource settings.</p>
+<div class="btns"><a class="btn p" href="#research">See my research</a><a class="btn s" href="#contact">Get in touch</a></div></div></header>
+
+<section id="about"><h2>About</h2><div class="two">
+<p>My training in algorithms, programming and machine learning, along with certifications from AWS Academy, the University of Glasgow and Johns Hopkins, has turned into one research focus: accessible, interpretable diagnostics for communities with limited clinical infrastructure.</p>
+<p>For research internships I want to join teams that work closely with doctors, clinicians and bioengineers, so that results are both scientifically rigorous and deployable. I value interdisciplinary collaboration, clinical relevance and translational impact, and I want my work to contribute to global health.</p></div></section>
+
+<section id="research"><h2>Research</h2><div class="stack"><article class="card proj"><div><p class="meta">SRM Institute of Science and Technology · Supervisor: Dr. Jesline Daniel</p><h3>Cataract detection with a smartphone</h3><p>Cataracts are a leading cause of preventable blindness, and screening usually needs a trained ophthalmologist and slit-lamp or fundus equipment. I benchmarked raw, histogram-equalized and CLAHE preprocessing across ResNet18, GoogleNet, ResNet101 and DenseNet201 in PyTorch, then added Grad-CAM heatmaps and a Streamlit app that returns a diagnosis and explanation in under 20 seconds on consumer hardware.</p><div class="stats"><div><b>98.33%</b><span>test accuracy</span></div><div><b>98%</b><span>precision and sensitivity</span></div><div><b>100%</b><span>specificity</span></div></div></div><div class="art"><figure class="eye">
+<svg viewBox="0 0 400 300" role="img" aria-label="Illustration of an eye with a cloudy lens that clears as the slider moves toward enhanced">
+<defs>
+<radialGradient id="iris" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#1b3a4b"/><stop offset=".55" stop-color="#2f8a8f"/><stop offset="1" stop-color="#16494f"/></radialGradient>
+<filter id="blur"><feGaussianBlur stdDeviation="9"/></filter>
+</defs>
+<rect width="400" height="300" fill="#dfe8ea"/>
+<path d="M20 150 Q200 20 380 150 Q200 280 20 150Z" fill="#fbfdfd" stroke="#0e2a33" stroke-width="3"/>
+<g id="ey"><circle cx="200" cy="150" r="82" fill="url(#iris)"/>
+<g stroke="#9fe0e3" stroke-opacity=".35" stroke-width="2"><path d="M200 150 L200 72M200 150 L262 88M200 150 L282 150M200 150 L262 212M200 150 L200 228M200 150 L138 212M200 150 L118 150M200 150 L138 88"/></g>
+<circle cx="200" cy="150" r="32" fill="#050c10"/><circle cx="184" cy="134" r="9" fill="#fff" fill-opacity=".85"/></g>
+<circle id="haze" cx="200" cy="150" r="90" fill="#e8e6dc" filter="url(#blur)" opacity=".9"/>
+</svg>
+<label for="sl"><span>Raw photo</span><span>CLAHE enhanced</span></label>
+<input id="sl" type="range" min="0" max="100" value="12" aria-label="Contrast enhancement">
+<p>Illustration. In my project, CLAHE preprocessing plus DenseNet201 separated cataract from healthy eyes at 98.33% test accuracy.</p>
+</figure></div></article><article class="card proj flip"><div><p class="meta">Dept. of Biomedical Engineering, SRMIST · Supervisor: Dr. Jaligam Murali Mohan</p><h3>Spinal abnormality detection from MRI</h3><p>Disc herniation is increasingly common in young adults, and MRI reads are slow and depend on scarce radiologists. I built an OpenCV pipeline and used the Spinal Cord Toolbox to segment the cord on T2-weighted lumbar MRI. Shape features such as ellipticity and flatness feed a binary classifier for normal versus herniated discs, with interpretability and robustness as priorities.</p><p>The result is "Spine Detect Pro", a Flask web app with real-time upload, instant classification and clinical safety disclaimers, aimed at rural centers without radiologists.</p></div><div class="art"><svg viewBox="0 0 280 200" role="img" aria-label="Lumbar spine with one herniated disc"><rect width="280" height="200" rx="14" fill="var(--surface)" stroke="var(--line)"/><rect x="95" y="14" width="90" height="26" rx="8" fill="var(--teal)" opacity=".8"/><rect x="95" y="60" width="90" height="26" rx="8" fill="var(--teal)" opacity=".8"/><rect x="95" y="106" width="90" height="26" rx="8" fill="var(--teal)" opacity=".8"/><rect x="95" y="152" width="90" height="26" rx="8" fill="var(--teal)" opacity=".8"/><rect x="100" y="42" width="80" height="14" rx="6" fill="var(--line)"/><rect x="100" y="134" width="80" height="14" rx="6" fill="var(--line)"/><rect x="100" y="88" width="80" height="14" rx="6" fill="var(--line)"/><path d="M180 88 q40 -4 34 14 q-6 14 -34 12z" fill="var(--accent)"/><text x="196" y="108" font-size="11" fill="var(--bg)" text-anchor="middle">disc</text><path d="M140 10 V190" stroke="var(--ink)" stroke-dasharray="3 4" opacity=".5"/></svg></div></article></div><div class="two" style="margin-top:24px"><article class="card"><p class="meta">Cedars-Sinai Medical Center</p><h3>AI in Medicine</h3><p>Research assistant under Aakash Shanbag, Senior Deep Learning Research Engineer. I contributed to clinical AI algorithms and software.</p></article><article class="card"><p class="meta">SRMIST · Dr. Rohit Gupta</p><h3>Biosensors and smart devices</h3><p>Research assistant supporting R&amp;D of wearable vital-sign biosensors.</p></article></div></section>
+
+<section id="writing"><h2>Publications</h2><ol class="pubs">
+<li><strong>Context-Aware Sentiment Analysis of Multilingual X/Twitter Threads Using Cascaded Transformers.</strong> Chakrabarti, S. et al. IEEE, ICDCA 2026, Aug 4, 2026. <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=11620370&amp;isnumber=11619916" rel="noopener">View on IEEE Xplore</a></li>
+<li><strong>Cataract Detection Using Smartphones Involving Deep Learning Techniques and Machine Learning.</strong> Chakrabarti, S. et al. International Conference on Electrical, Computer and Energy Technologies (ICECET) 2025, Paris, France. Published in the International Journal of Latest Technology in Engineering, Management &amp; Applied Science.</li></ol></section>
+
+<section id="projects"><h2>Projects</h2><div class="stack"><article class="card proj"><div><p class="meta">SRMIST · IEEE paper</p><h3>Multilingual sentiment dashboard</h3><p>A context-retaining crawler and rule-based transliteration normalize Romanized Bengali, Persian and Arabic to native scripts. XLM-RoBERTa classifies sentiment, zero-shot BART-large-MNLI identifies intent, and Sentence-BERT filters off-topic replies using language-dependent cosine-similarity cutoffs. Results appear in an interactive Streamlit dashboard.</p></div><div class="art"><svg viewBox="0 0 280 200" role="img" aria-label="Cascade of transformer stages"><rect width="280" height="200" rx="14" fill="var(--surface)" stroke="var(--line)"/><rect x="70" y="14" width="140" height="30" rx="8" fill="var(--muted)"/><text x="140" y="34" font-size="13" fill="var(--bg)" text-anchor="middle" font-family="sans-serif">Romanized posts</text><rect x="70" y="58" width="140" height="30" rx="8" fill="var(--teal)"/><text x="140" y="78" font-size="13" fill="var(--bg)" text-anchor="middle" font-family="sans-serif">XLM-R sentiment</text><rect x="70" y="102" width="140" height="30" rx="8" fill="var(--teal)"/><text x="140" y="122" font-size="13" fill="var(--bg)" text-anchor="middle" font-family="sans-serif">BART-MNLI intent</text><rect x="70" y="146" width="140" height="30" rx="8" fill="var(--accent)"/><text x="140" y="166" font-size="13" fill="var(--bg)" text-anchor="middle" font-family="sans-serif">SBERT relevance</text><g stroke="var(--ink)" opacity=".5"><path d="M140 44v14M140 88v14M140 132v14"/></g></svg></div></article><article class="card proj flip"><div><p class="meta">SRMIST · Mobile health platform</p><h3>Fast and Fit</h3><p>A fitness and wellness app that tracks exercise and diet and gives personalized guidance. It combines an adaptive fitness and recovery engine, ML/NLP macronutrient tracking, and predictive analytics for performance plateaus and overtraining risk.</p></div><div class="art"><svg viewBox="0 0 280 200" role="img" aria-label="Phone showing a heartbeat line and activity ring"><rect width="280" height="200" rx="14" fill="var(--surface)" stroke="var(--line)"/><rect x="95" y="14" width="90" height="172" rx="16" fill="var(--bg)" stroke="var(--ink)" stroke-width="3"/><circle cx="140" cy="70" r="26" fill="none" stroke="var(--line)" stroke-width="9"/><path d="M140 44a26 26 0 1 1-22 40" fill="none" stroke="var(--accent)" stroke-width="9" stroke-linecap="round"/><path d="M105 140h18l8-22 10 40 8-28 6 10h20" fill="none" stroke="var(--teal)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div></article></div><div class="two" style="margin-top:24px"><article class="card mini"><div class="art"><svg viewBox="0 0 280 200" role="img" aria-label="Route map with pins"><rect width="280" height="200" rx="14" fill="var(--surface)" stroke="var(--line)"/><path d="M30 160 C80 60 120 170 160 90 S230 50 250 40" fill="none" stroke="var(--teal)" stroke-width="5" stroke-dasharray="2 9" stroke-linecap="round"/><circle cx="30" cy="160" r="10" fill="var(--ink)"/><circle cx="250" cy="40" r="10" fill="var(--accent)"/><path d="M150 150c0-22 24-22 24 0 0 16-24 16-24 0z" fill="var(--teal)"/></svg></div><div><h3>Yaatayaat</h3><p>A smart travel platform that alerts users to route disruptions, suggests alternatives, shows CO2 savings for eco-friendly routes, saves frequent routes and handles payments and refunds.</p></div></article><article class="card mini"><div class="art"><svg viewBox="0 0 280 200" role="img" aria-label="Ticket and database table"><rect width="280" height="200" rx="14" fill="var(--surface)" stroke="var(--line)"/><path d="M30 40h110v34a10 10 0 0 0 0 20v34H30v-34a10 10 0 0 0 0-20z" fill="var(--accent)"/><path d="M85 48v104" stroke="var(--bg)" stroke-dasharray="4 5"/><g fill="var(--line)"><rect x="155" y="40" width="95" height="22" rx="4"/><rect x="155" y="70" width="95" height="22" rx="4"/><rect x="155" y="100" width="95" height="22" rx="4"/><rect x="155" y="130" width="95" height="22" rx="4"/></g><rect x="155" y="40" width="95" height="22" rx="4" fill="var(--teal)"/></svg></div><div><h3>Amusement Park Ticket Booking</h3><p>A DBMS application for ticket availability, bookings, user management and transaction records on a relational backend.</p></div></article><article class="card mini"><div class="art"><svg viewBox="0 0 280 200" role="img" aria-label="Menu card and food bowl"><rect width="280" height="200" rx="14" fill="var(--surface)" stroke="var(--line)"/><rect x="30" y="30" width="80" height="140" rx="10" fill="var(--bg)" stroke="var(--line)"/><g stroke="var(--muted)" stroke-width="4" stroke-linecap="round"><path d="M45 55h50M45 80h35M45 105h50M45 130h30"/></g><path d="M140 110h110a55 45 0 0 1-110 0z" fill="var(--accent)"/><path d="M165 95c0-14 14-14 14-28M195 95c0-14 14-14 14-28" fill="none" stroke="var(--teal)" stroke-width="4" stroke-linecap="round"/></svg></div><div><h3>Food Ordering App</h3><p>Lets restaurants publish an online menu that customers browse and order from, with an admin interface for processing orders.</p></div></article><article class="card mini"><div class="art"><svg viewBox="0 0 280 200" role="img" aria-label="Login window"><rect width="280" height="200" rx="14" fill="var(--surface)" stroke="var(--line)"/><rect x="50" y="26" width="180" height="148" rx="10" fill="var(--bg)" stroke="var(--ink)" stroke-width="2"/><rect x="50" y="26" width="180" height="24" rx="10" fill="var(--teal)"/><rect x="68" y="68" width="144" height="22" rx="5" fill="var(--line)"/><rect x="68" y="100" width="144" height="22" rx="5" fill="var(--line)"/><rect x="68" y="132" width="70" height="26" rx="13" fill="var(--accent)"/></svg></div><div><h3>Object-Oriented Design Project</h3><p>A modular program with a menu for registering, logging in and recovering a password, built for maintainability.</p></div></article></div></section>
+
+<section id="path">
+<h2>Experience and education</h2>
+<ol class="tl">
+<li><h3>MS, Biomedical Engineering</h3><p class="meta">Columbia University · 2026 to present</p></li>
+<li><h3>Global Study Program, Computer and Information Sciences</h3><p class="meta">University of California, Davis · 2025 to 2026</p></li>
+<li><h3>Risk Analytics Intern</h3><p class="meta">PKF O'Connor Davies, Mumbai · Jun to Jul 2024</p><p>Assisted senior auditors with risk assessments, analyzing financial and operational data to find vulnerabilities and control gaps.</p></li>
+<li><h3>Senior Associate</h3><p class="meta">Coding Ninjas 10x SRM · 2022 to 2024</p><p>Mentored junior members of a student technical community and organized coding competitions and national-level hackathons.</p></li>
+<li><h3>B.Tech, Computer Science and Engineering</h3><p class="meta">SRM Institute of Science and Technology · 2022 to 2026</p></li>
+</ol>
+</section>
+
+<section id="skills">
+<h2>Skills</h2>
+<dl class="skills" style="margin:0">
+<dt>Programming and web</dt><dd><ul class="chips"><li>Python</li><li>JavaScript</li><li>Flask</li><li>Streamlit</li><li>HTML/CSS</li><li>Bootstrap</li></ul></dd>
+<dt>Machine learning, vision and NLP</dt><dd><ul class="chips"><li>PyTorch</li><li>TensorFlow</li><li>Scikit-learn</li><li>DenseNet201</li><li>ResNet</li><li>Grad-CAM</li><li>OpenCV</li><li>Spinal Cord Toolbox</li><li>XLM-RoBERTa</li><li>BART-large-MNLI</li><li>Sentence-BERT</li></ul></dd>
+<dt>Data</dt><dd><ul class="chips"><li>pandas</li><li>NumPy</li><li>Git</li><li>MySQL</li><li>PostgreSQL</li><li>SQLite</li><li>REST APIs</li></ul></dd>
+<dt>Certifications</dt><dd><ul class="chips"><li>Foundations of Healthcare Systems Engineering (Johns Hopkins)</li><li>Biomedical Visualization (Glasgow)</li><li>Introduction to Generative AI (Google)</li><li>Programming for Everybody (Michigan)</li><li>AWS Academy ML Foundations</li><li>DBMS (Scaler)</li><li>Workflow of 3D Character Art (MSI)</li><li>Kaggle: Python, Pandas, Intro and Intermediate ML, Feature Engineering, Computer Vision, Deep Learning, AI Ethics, Intro to Programming</li></ul></dd>
+<dt>Coursework</dt><dd><ul class="chips"><li>Intro to Computational Biology</li><li>Fundamentals of Biomedical Engineering</li><li>Intro to Biomedical Engineering (UC Davis)</li><li>Infectious Diseases of Humans (UC Davis)</li><li>RF and Microwaves in Wireless Communication (UC Davis)</li><li>Artificial Intelligence</li><li>Machine Learning</li><li>Biology Inspired Computing</li><li>Biometrics</li><li>Data Science</li><li>Data Structures and Algorithms</li><li>Design and Analysis of Algorithms</li><li>Database Management Systems</li><li>Computer Networks</li><li>Compiler Design</li></ul></dd>
+<dt>Languages</dt><dd>English, Hindi and Bengali (native or bilingual), German (limited working)</dd>
+</dl>
+</section>
+
+<section id="beyond"><h2>Beyond the lab</h2><div class="two"><article class="card"><h3>Service and community</h3><p>I volunteered with the Sad Vidhya Vikas Trust and took part in National Service Scheme initiatives. These grounded my view of the social realities behind responsible technology and pushed me to prioritize inclusivity and usability. At Coding Ninjas Club SRM I contributed to team management and peer mentoring.</p></article><article class="card"><h3>Test scores</h3><div class="stats"><div><b>321</b><span>GRE, Jul 2025</span></div><div><b>109</b><span>TOEFL, Jul 2025</span></div></div></article></div></section>
+
+<section id="roadmap">
+<h2>What I'm learning next</h2>
+<p class="prog" id="prog" aria-live="polite"></p>
+<div class="road">
+<div class="card"><h3>Medical imaging stack</h3><ul>
+<li><label><input type="checkbox"><span>Work with DICOM and NIfTI files using pydicom and nibabel</span></label></li>
+<li><label><input type="checkbox"><span>Train a 3D segmentation model with MONAI on a public dataset</span></label></li>
+<li><label><input type="checkbox"><span>Fine-tune a medical foundation model (MedSAM or similar)</span></label></li>
+<li><label><input type="checkbox"><span>Report Dice, AUROC and calibration, not accuracy alone</span></label></li></ul></div>
+<div class="card"><h3>Ship it like a product</h3><ul>
+<li><label><input type="checkbox"><span>Containerize a model with Docker and serve it with FastAPI</span></label></li>
+<li><label><input type="checkbox"><span>Track experiments with Weights &amp; Biases or MLflow</span></label></li>
+<li><label><input type="checkbox"><span>Add tests and CI with GitHub Actions to each repo</span></label></li>
+<li><label><input type="checkbox"><span>Put a live demo of each project on Hugging Face Spaces</span></label></li></ul></div>
+<div class="card"><h3>Clinical and regulatory sense</h3><ul>
+<li><label><input type="checkbox"><span>Read the FDA guidance on AI/ML-enabled medical devices</span></label></li>
+<li><label><input type="checkbox"><span>Learn IEC 62304 and ISO 14971 basics for software and risk</span></label></li>
+<li><label><input type="checkbox"><span>Understand HIPAA and de-identification of patient data</span></label></li>
+<li><label><input type="checkbox"><span>Shadow or interview a clinician about one real workflow</span></label></li></ul></div>
+<div class="card"><h3>Rigor and trust</h3><ul>
+<li><label><input type="checkbox"><span>Study biostatistics: confidence intervals, bias, external validation</span></label></li>
+<li><label><input type="checkbox"><span>Test a model across devices, sites and skin or eye types for fairness</span></label></li>
+<li><label><input type="checkbox"><span>Try uncertainty estimation and federated learning on a small dataset</span></label></li>
+<li><label><input type="checkbox"><span>Write one reproducible, open-source project with a model card</span></label></li></ul></div>
+<div class="card"><h3>Get seen</h3><ul>
+<li><label><input type="checkbox"><span>Make a one-page résumé with measurable results per bullet</span></label></li>
+<li><label><input type="checkbox"><span>Write a short blog post explaining the cataract project to non-experts</span></label></li>
+<li><label><input type="checkbox"><span>Email 10 labs and startups with a specific idea, not a generic ask</span></label></li>
+<li><label><input type="checkbox"><span>Join Columbia BME and ML communities and attend talks</span></label></li></ul></div>
+</div>
+</section>
+
+<footer id="contact">
+<h2>Contact</h2>
+<p>Looking for an internship in medical AI and biomedical engineering. Write to me at <a href="mailto:sc5993@columbia.edu">sc5993@columbia.edu</a> or find me on <a href="https://linkedin.com/in/sagnik-chakrabarti-" rel="noopener">LinkedIn</a>. Based in New York, NY.</p>
+<p>© 2026 Sagnik Chakrabarti</p>
+</footer>
+</div>
+<script>
+(function(){
+var sl=document.getElementById('sl'),haze=document.getElementById('haze'),ey=document.getElementById('ey');
+function eye(){var v=sl.value/100;haze.setAttribute('opacity',(0.9*(1-v)).toFixed(2));ey.style.filter='contrast('+(0.85+0.45*v).toFixed(2)+') saturate('+(0.7+0.6*v).toFixed(2)+')'}
+sl.addEventListener('input',eye);eye();
+var boxes=[].slice.call(document.querySelectorAll('.road input')),prog=document.getElementById('prog'),K='roadmap-done',saved=[];
+try{saved=JSON.parse(localStorage.getItem(K)||'[]')}catch(e){}
+function upd(){var n=boxes.filter(function(b){return b.checked}).length;prog.textContent=n+' of '+boxes.length+' done';
+try{localStorage.setItem(K,JSON.stringify(boxes.map(function(b,i){return b.checked?i:-1}).filter(function(i){return i>=0})))}catch(e){}}
+boxes.forEach(function(b,i){if(saved.indexOf(i)>-1)b.checked=true;b.addEventListener('change',upd)});upd();
+})();
+</script>
+</body>
+</html>
